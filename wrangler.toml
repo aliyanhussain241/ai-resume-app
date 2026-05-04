@@ -1,0 +1,21 @@
+name = "resubeat"
+pages_build_output_dir = "dist"
+compatibility_date = "2024-05-04"
+
+# D1 Database Binding for CMS and User Data
+[[d1_databases]]
+binding = "DB" # Access via env.DB in your Cloudflare Functions
+database_name = "resubeat-d1"
+database_id = "YOUR_D1_DATABASE_ID_HERE" # Replace with your actual D1 ID from Cloudflare Dashboard
+migrations_dir = "migrations"
+
+# R2 Storage Binding for Images and CV PDFs
+[[r2_buckets]]
+binding = "STORAGE" # Access via env.STORAGE in your Cloudflare Functions
+bucket_name = "resubeat-r2"
+preview_bucket_name = "resubeat-r2-dev" # Optional: For local development
+
+# Environment Variables needed for your AI integrations
+[vars]
+# NODE_ENV = "production"
+# Add your GEMINI_API_KEY directly in the Cloudflare Dashboard under Settings -> Environment Variables, DO NOT commit it here.
